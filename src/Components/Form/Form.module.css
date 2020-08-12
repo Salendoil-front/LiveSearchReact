@@ -1,3 +1,8 @@
 .Form{
-	
+	margin-top: 100px;
+
+}
+
+.Form input{
+	min-width: 500px;
 }
