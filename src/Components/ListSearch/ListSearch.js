@@ -4,7 +4,15 @@ import classes from './ListSearch.module.css'
 const ListSearch = props => {
 
 	return(
-		<div className={classes.ListSearch}>LOL</div>
+		<ul className={classes.ListSearch}>
+			{props.people.map((person, index) => {
+				return(
+					<li key={index}>
+						<span>Имя: {person.name},Возраст: {person.age},Бюджет: {person.money} </span>
+					</li>
+				)
+			})}
+		</ul>
 	)
 }
 

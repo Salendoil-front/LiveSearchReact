@@ -1,3 +1,16 @@
 .ListSearch{
-	
+	list-style: none;
+	width: 500px;
+	margin: 100px auto;
+	padding: 10px;
+	display: flex;	
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+}
+
+.ListSearch li{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
