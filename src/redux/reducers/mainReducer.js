@@ -1,5 +1,7 @@
+import { CHANGE_INPUT } from "../actions/actionTypes/actionTypes"
+
 const initialState = {
-	main:true,
+	input:'',
 	people: [
 		{ name: 'Леха', age: 21, money: 2000 },
 		{ name: 'Кирилл', age: 10, money: 500 },
@@ -12,11 +14,16 @@ const initialState = {
 		{ name: 'Христина', age: 19, money: 25000 },
 		{ name: 'Филин', age: 20, money: 30000 },
 		{ name: 'Папа', age: 50, money: 2000000000 }
-	]
+	],
+	newPeople: []
 }
 
 export default function mainReducer(state = initialState, action){
 	switch(action.type){
+		case CHANGE_INPUT:
+			return{
+				...state, input: action.payload
+			}
 		default:
 			return state
 	}

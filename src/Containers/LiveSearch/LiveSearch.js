@@ -4,14 +4,15 @@ import {connect} from 'react-redux'
 import classes from './LiveSearch.module.css'
 import Form from '../../Components/Form/Form'
 import ListSearch from '../../Components/ListSearch/ListSearch'
+import { changeInput } from '../../redux/actions/mainSearch/mainSearch'
 
 class LiveSearch extends React.Component {
 	
 	render() {
-		console.log(this.props.state.people)
+		console.log(this.props.input)
 		return (
 			<div className={classes.LiveSearch}>
-				<Form />
+				<Form onChange={(event) => this.props.changeInput(event.target.value)} />
 				<ListSearch people={this.props.state.people} />
 				
 			</div>
@@ -21,14 +22,15 @@ class LiveSearch extends React.Component {
 
 function mapStateToProps(state){
 	return{
-		state: state.main
+		state: state.main,
+		input: state.main.input
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return{
-		
+		changeInput: (value) => dispatch(changeInput(value))
 	}
 }
 
-export default connect(mapStateToProps)(LiveSearch)
+export default connect(mapStateToProps,mapDispatchToProps)(LiveSearch)

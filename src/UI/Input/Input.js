@@ -6,7 +6,7 @@ const Input = props => {
 	let type = props.type || 'text'
 
 	return(
-		<input className={classes.Input} type={type} value={props.value} />
+		<input className={classes.Input} type={type} value={props.value}  onChange={props.onChange} />
 	)
 }
 
