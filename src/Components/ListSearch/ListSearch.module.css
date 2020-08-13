@@ -5,12 +5,17 @@
 	padding: 10px;
 	display: flex;	
 	flex-direction: column;
-	justify-content: flex-start;
+	/* justify-content: flex-start; */
 	align-items: flex-start;
 }
 
 .ListSearch li{
+	display: block;
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 10px;
+}
+
+.ListSearch li.hide{
+	display: none;
 }
